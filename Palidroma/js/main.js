@@ -1,5 +1,5 @@
 // chiedo una parola all'utente
-const userWord = prompt("inserisci una parola").toLowerCase();
+const userWord = prompt("inserisci una parola").toLowerCase().trim();
 console.log("La parola inserita dall'utente è: " + userWord);
 
 // trasformo la parola data in un array che contiene come elementi le lettere che la compongono

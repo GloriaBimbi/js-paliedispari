@@ -2,7 +2,7 @@
 // Dichiariamo chi ha vinto.
 
 // chiedo all'utente di scegliere tra pari e dispari
-const typeNumber = prompt("Scegli PARI o DISPARI").toLowerCase();
+const typeNumber = prompt("Scegli PARI o DISPARI").toLowerCase().trim();
 console.log("L'utente ha scelto: " + typeNumber);
 
 // interrompi il gioco se l'utente non inserisce un dato tra "pari" e "dispari"
@@ -43,10 +43,10 @@ if (typeNumber != "pari" && typeNumber != "dispari") {
 
     // invoco la funzione per capire se la somma dei due numeri è pari o dispari
     const sommaType = EvenOrOdd(somma);
-    console.log("La somma dei due numeri è: " + sommaType);
+    console.log("La somma dei due numeri è: " + typeNumber);
 
     // dichiaro il vincitore
-    if (sommaType == typeNumber) {
+    if (typeNumber == typeNumber) {
       alert("HAI VINTO!");
     } else {
       alert("HAI PERSO!");
