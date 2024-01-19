@@ -18,35 +18,35 @@ if (typeNumber != "pari" && typeNumber != "dispari") {
     alert("Non hai inserito un dato corretto");
   } else {
     // creo una funzione che genera un numero casuale
-    function GenerateRandomNumber(min, max) {
+    function generateRandomNumber(min, max) {
       const randomNumber = Math.floor(Math.random() * (max + min - 1) + min);
       return randomNumber;
     }
 
     // uso la funzione per ottenere il numero casuale del computer e lo stampo in console
-    const computerNumber = GenerateRandomNumber(1, 5);
+    const computerNumber = generateRandomNumber(1, 5);
     console.log("Il numero del computer è: " + computerNumber);
 
     // faccio la somma del numero dell'utente e del numero randomico del computer
     const somma = userNumber + computerNumber;
     console.log("La somma dei due numeri è: " + somma);
 
-    // creo una funzione con cui stabilisco se la somma dei due numeri è pari o dispari
-    function EvenOrOdd(number) {
-      if (number % 2 === 0) {
-        const typeNumber = "pari";
+    let evenNumber;
+    // creo una funzione con cui stabilisco se un numero è pari
+    function isEvenNumber(number) {
+      if (number % 2 == 0) {
+        evenNumber = true;
       } else {
-        const typeNumber = "dispari";
+        evenNumber = false;
       }
-      return typeNumber;
+      return evenNumber;
     }
 
-    // invoco la funzione per capire se la somma dei due numeri è pari o dispari
-    const sommaType = EvenOrOdd(somma);
-    console.log("La somma dei due numeri è: " + typeNumber);
-
     // dichiaro il vincitore
-    if (typeNumber == typeNumber) {
+    if (
+      (isEvenNumber(somma) == true && typeNumber == "pari") ||
+      (isEvenNumber(somma) == false && typeNumber == "dispari")
+    ) {
       alert("HAI VINTO!");
     } else {
       alert("HAI PERSO!");
